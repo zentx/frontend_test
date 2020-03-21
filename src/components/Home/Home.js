@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { StyledHome, StyledDiv } from './Home.styled';
 import { ProductCard } from 'react-ui-cards';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
-import { Spinner } from 'react-bootstrap';
+import { Spinner, Alert } from 'react-bootstrap';
 
 function AlertDismissible(props) {
     const [show, setShow] = useState(true);
