@@ -5,6 +5,22 @@ import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import { Spinner } from 'react-bootstrap';
 
+function AlertDismissible(props) {
+    const [show, setShow] = useState(true);
+  
+    return (
+      <>
+        <Alert show={show} variant="light">
+          <Alert.Heading>ERROR!</Alert.Heading>
+          <p>
+            { props.value }
+          </p>
+          <hr />
+        </Alert>
+      </>
+    );
+  }
+
 class Home extends Component {
 
     constructor(props) {
@@ -64,7 +80,9 @@ class Home extends Component {
 
 
     render(){
-        var { data, loading } = this.state;
+        var { data, error, loading } = this.state;
+
+        if (error) return <StyledHome> <AlertDismissible value={error.message} /></StyledHome>;
 
         if (loading) return <StyledDiv><Spinner animation="grow" variant="primary" size="lg" /></StyledDiv>;
         console.log("sigo aqui");
