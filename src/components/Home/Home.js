@@ -38,6 +38,7 @@ class Home extends Component {
         .then(res => {
         const data = res.data.map(obj => obj);
         this.setState({ data, loading: false });
+        console.log("termine");
         });
         this.props.updateHome();
     } catch (error) {
@@ -53,8 +54,8 @@ class Home extends Component {
     render(){
         var { data, loading } = this.state;
 
-        if (loading) return <StyledDiv><Spinner animation="grow" variant="light" size="lg" /></StyledDiv>;
-
+        if (loading) return <StyledDiv><Spinner animation="grow" variant="primary" size="lg" /></StyledDiv>;
+        console.log("sigo aqui");
         let content = [];
             
             let column = [];
@@ -112,6 +113,7 @@ class Home extends Component {
                         
                         );
                 })
+                console.log("o estoy aqui");
                 content.push(
                     <div className="card-container">
                         { column }

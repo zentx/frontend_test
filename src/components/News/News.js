@@ -37,7 +37,7 @@ class News extends Component {
       render(){
             const { data, loading } = this.state;
 
-            if (loading) return <StyledDiv><Spinner animation="grow" variant="light" size="lg" /></StyledDiv>;
+            if (loading) return <StyledDiv><Spinner animation="grow" variant="primary" size="lg" /></StyledDiv>;
 
 
           return(
