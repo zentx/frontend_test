@@ -17,7 +17,7 @@ class News extends Component {
 
     componentDidMount() {
         try {
-            axios.get(`https://newscrudapi.herokuapp.com/api/articles/` + this.props.match.params.id +  `.json`)
+            axios.get(`https://cors-anywhere.herokuapp.com/https://newscrudapi.herokuapp.com/api/articles/` + this.props.match.params.id +  `.json`)
             .then(res => {
                 this.setState({
                     data: res.data,
