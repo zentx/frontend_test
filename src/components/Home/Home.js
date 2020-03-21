@@ -45,6 +45,7 @@ class Home extends Component {
         });
         this.props.updateHome();
     } catch (error) {
+        console.log("error");
         this.setState({
           error,
           loading: false
