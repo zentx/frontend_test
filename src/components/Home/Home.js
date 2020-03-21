@@ -60,7 +60,7 @@ class Home extends Component {
         // this.setState({ data, loading: false });
         // console.log("termine");
         // });
-        const result = await axios.get("https://newscrudapi.herokuapp.com/api/articles.json");
+        const result = await axios.get("https://newscrudapi.herokuapp.com/api/articles");
         console.log("resultado");
         console.log(result.data);
         this.setState({
