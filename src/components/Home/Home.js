@@ -34,7 +34,7 @@ class Home extends Component {
 
     async componentDidMount() {
     try {
-        await axios.get(`http://localhost:8000/api/articles.json`)
+        await axios.get(`https://newscrudapi.herokuapp.com/api/articles.json`)
         .then(res => {
         const data = res.data.map(obj => obj);
         this.setState({ data, loading: false });
