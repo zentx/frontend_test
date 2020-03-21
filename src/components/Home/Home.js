@@ -62,6 +62,7 @@ class Home extends Component {
             if(data.length > 3){
                 data.forEach((article, i) => {
                     if((i+1) % 4 == 0){
+                        console.log("ya tengo 4");
                         column.push(<ProductCard key={article.id}
                             float
                             photos={[ article.imageUrl  ]}
@@ -77,6 +78,7 @@ class Home extends Component {
                         );
                       column = [];
                     }else{
+                        console.log("puse 1");
                         column.push(<ProductCard key={article.id}
                             float
                             photos={[ article.imageUrl  ]}
@@ -89,6 +91,7 @@ class Home extends Component {
                     }
                 })
             if(data.length % 4 != 0){
+                console.log("no alcance a llenar");
                 content.push(
                     <div className="card-container" >       
                         { column }
