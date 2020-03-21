@@ -32,9 +32,10 @@ class Home extends Component {
     }
 
 
-     componentDidMount() {
+    componentDidMount() {
     try {
-         axios.get(`https://newscrudapi.herokuapp.com/api/articles.json`)
+        console.log("comence");
+         axios.get(`http://newscrudapi.herokuapp.com/api/articles.json`)
         .then(res => {
         console.log("termine mi req");
         const data = res.data.map(obj => obj);
