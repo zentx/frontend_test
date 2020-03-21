@@ -32,18 +32,25 @@ class Home extends Component {
     }
 
 
-    componentDidMount() {
+    async componentDidMount() {
     try {
         console.log("comence");
-        axios.get(`https://rickandmortyapi.com/api/character/`)
-        .then(res => {
-        console.log("termine mi req");
-        const data = res.data.map(obj => obj);
-        console.log("esto es data");
-        console.log(data);
-        this.setState({ data, loading: false });
-        console.log("termine");
-        });
+        // axios.get(`https://rickandmortyapi.com/api/character/`)
+        // .then(res => {
+        // console.log("termine mi req");
+        // const data = res.data.map(obj => obj);
+        // console.log("esto es data");
+        // console.log(data);
+        // this.setState({ data, loading: false });
+        // console.log("termine");
+        // });
+        const result = await axios.get("https://newscrudapi.herokuapp.com/api/articles.json");
+        console.log("resultado");
+        console.log(result.data);
+        this.setState({
+            data: result.data,
+            loading: false
+          });
         this.props.updateHome();
     } catch (error) {
         console.log("error");
